@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Day 1 Mini Test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <p class="badge">Python Day 1</p>
+        <h1>Python 기초 미니 테스트</h1>
+        <p class="description">
+          오늘 학습한 Python 기초 내용을 확인하는 테스트입니다.
+        </p>
+      </header>
+
+      <section class="student-info">
+        <label for="studentName">이름</label>
+        <input type="text" id="studentName" placeholder="이름을 입력하세요" />
+      </section>
+
+      <form id="quizForm">
+        <!-- 문제 1 -->
+        <section class="question" data-question="1">
+          <h2>1. Python 언어의 특징</h2>
+
+          <p>
+            다음 중 Python에 대한 설명으로
+            <strong>가장 적절하지 않은 것</strong>은?
+          </p>
+
+          <label>
+            <input type="radio" name="q1" value="1" />
+            ① 비교적 문법이 간결하여 입문자가 배우기 쉬운 편이다.
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="2" />
+            ② 데이터 분석, 인공지능, 웹 개발 등 다양한 분야에서 활용된다.
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="3" />
+            ③ 변수에 값을 저장하여 이후 코드에서 사용할 수 있다.
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="4" />
+            ④ 모든 변수의 자료형을 선언할 때 반드시 int, str 등을 변수 앞에
+            작성해야 한다.
+          </label>
+        </section>
+
+        <!-- 문제 2 -->
+        <section class="question" data-question="2">
+          <h2>2. 변수와 값 할당</h2>
+
+          <pre>
+price = 3000
+price = 4500
+price = price + 500
+      </pre
+          >
+
+          <p>최종적으로 price에 저장되는 값은?</p>
+
+          <label>
+            <input type="radio" name="q2" value="1" />
+            ① 3000
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="2" />
+            ② 4500
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="3" />
+            ③ 5000
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="4" />
+            ④ 오류 발생
+          </label>
+        </section>
+
+        <!-- 문제 3 -->
+        <section class="question">
+          <h2>3. 자료형(Data Type)</h2>
+
+          <p>다음 중 자료형 연결이 잘못된 것은?</p>
+
+          <label>
+            <input type="radio" name="q3" value="1" />
+            ① 100 → int
+          </label>
+
+          <label>
+            <input type="radio" name="q3" value="2" />
+            ② 3.14 → float
+          </label>
+
+          <label>
+            <input type="radio" name="q3" value="3" />
+            ③ "Python" → str
+          </label>
+
+          <label>
+            <input type="radio" name="q3" value="4" />
+            ④ "100" → int
+          </label>
+        </section>
+
+        <!-- 문제 4 -->
+        <section class="question">
+          <h2>4. 사칙연산자</h2>
+
+          <pre>
+a = 10
+b = 3
+
+print(a + b)
+print(a * b)
+print(a / b)
+      </pre
+          >
+
+          <label>
+            <input type="radio" name="q4" value="1" />
+            ① 13, 30, 3
+          </label>
+
+          <label>
+            <input type="radio" name="q4" value="2" />
+            ② 13, 30, 약 3.333...
+          </label>
+
+          <label>
+            <input type="radio" name="q4" value="3" />
+            ③ 7, 30, 약 3.333...
+          </label>
+
+          <label>
+            <input type="radio" name="q4" value="4" />
+            ④ 13, 13, 3
+          </label>
+        </section>
+
+        <!-- 문제 5 -->
+        <section class="question">
+          <h2>5. 비교연산자</h2>
+
+          <pre>
+age = 20
+
+print(age > 18)
+print(age == 20)
+print(age != 20)
+      </pre
+          >
+
+          <label>
+            <input type="radio" name="q5" value="1" />
+            ① True, True, False
+          </label>
+
+          <label>
+            <input type="radio" name="q5" value="2" />
+            ② True, False, True
+          </label>
+
+          <label>
+            <input type="radio" name="q5" value="3" />
+            ③ False, True, False
+          </label>
+
+          <label>
+            <input type="radio" name="q5" value="4" />
+            ④ 20, 20, 0
+          </label>
+        </section>
+
+        <!-- 문제 6 -->
+        <section class="question">
+          <h2>6. 변수 선언 및 출력</h2>
+
+          <p>
+            자신의 이름을 <code>name</code>, 나이를 <code>age</code> 변수에
+            저장한 후 출력하는 코드를 작성하세요.
+          </p>
+
+          <textarea
+            name="q6"
+            placeholder='예)
+name = "홍길동"
+age = 25
+print(name)
+print(age)'
+          ></textarea>
+        </section>
+
+        <!-- 문제 7 -->
+        <section class="question">
+          <h2>7. 형변환</h2>
+
+          <pre>
+price = "5000"
+count = 3
+      </pre
+          >
+
+          <p>숫자 15000이 출력되도록 코드를 작성하세요.</p>
+
+          <textarea name="q7" placeholder="코드를 입력하세요"></textarea>
+        </section>
+
+        <!-- 문제 8 -->
+        <section class="question">
+          <h2>8. input() 활용</h2>
+
+          <p>
+            사용자에게 이름을 입력받아 "안녕하세요 홍길동님!" 형태로 출력하는
+            코드를 작성하세요.
+          </p>
+
+          <textarea name="q8" placeholder="코드를 입력하세요"></textarea>
+        </section>
+
+        <!-- 문제 9 -->
+        <section class="question">
+          <h2>9. 입력값 + 형변환 + 연산</h2>
+
+          <p>
+            상품 가격과 수량을 입력받아 총 구매금액을 계산하는 프로그램을
+            작성하세요.
+          </p>
+
+          <textarea name="q9" placeholder="코드를 입력하세요"></textarea>
+        </section>
+
+        <!-- 문제 10 -->
+        <section class="question">
+          <h2>10. 종합 문제</h2>
+
+          <p>
+            현재 나이를 입력받아 10년 후 나이를 출력하는 프로그램을 작성하세요.
+          </p>
+
+          <textarea name="q10" placeholder="코드를 입력하세요"></textarea>
+        </section>
+
+        <button type="button" id="submitBtn">제출하기</button>
+      </form>
+
+      <div id="result" class="result hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

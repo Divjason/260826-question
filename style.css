@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f6f8;
+  color: #222;
+  font-family:
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.container {
+  width: min(900px, 92%);
+  margin: 60px auto;
+}
+
+/* Header */
+
+header {
+  margin-bottom: 40px;
+}
+
+.badge {
+  display: inline-block;
+
+  margin: 0 0 12px;
+  padding: 7px 12px;
+
+  background: #222;
+  color: white;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: 36px;
+}
+
+.description {
+  margin-top: 12px;
+
+  color: #777;
+}
+
+/* 학생 정보 */
+
+.student-info {
+  padding: 25px;
+  margin-bottom: 25px;
+
+  background: white;
+
+  border-radius: 14px;
+}
+
+.student-info label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-weight: 700;
+}
+
+.student-info input {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-size: 16px;
+}
+
+/* 문제 */
+
+.question {
+  margin-bottom: 20px;
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.question h2 {
+  margin-top: 0;
+
+  font-size: 20px;
+}
+
+.question label {
+  display: block;
+
+  padding: 12px;
+  margin: 7px 0;
+
+  border: 1px solid #eee;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.question label:hover {
+  background: #f8f8f8;
+}
+
+.question input {
+  margin-right: 8px;
+}
+
+/* 코드 */
+
+pre {
+  padding: 18px;
+
+  overflow-x: auto;
+
+  background: #1e1e1e;
+  color: #f8f8f8;
+
+  border-radius: 8px;
+
+  line-height: 1.7;
+}
+
+/* 주관식 */
+
+textarea {
+  width: 100%;
+  min-height: 130px;
+
+  margin-top: 15px;
+  padding: 15px;
+
+  resize: vertical;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 버튼 */
+
+#submitBtn {
+  width: 100%;
+
+  margin-top: 20px;
+  padding: 18px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: #222;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background: #444;
+}
+
+/* 결과 */
+
+.result {
+  margin-top: 30px;
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 14px;
+}
+
+.hidden {
+  display: none;
+}
