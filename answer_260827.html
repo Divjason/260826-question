@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Python Day 2 | 정답 및 해설</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f5f6f8;
+        color: #222;
+        font-family:
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.7;
+      }
+
+      .container {
+        width: min(900px, 92%);
+        margin: 60px auto 100px;
+      }
+
+      header {
+        margin-bottom: 40px;
+      }
+
+      .badge {
+        display: inline-block;
+        margin: 0 0 12px;
+        padding: 7px 13px;
+        background: #222;
+        color: white;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 38px;
+        line-height: 1.3;
+      }
+
+      .description {
+        margin-top: 14px;
+        color: #666;
+        font-size: 16px;
+      }
+
+      .summary {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: #fff;
+        border: 1px solid #e9e9e9;
+        border-radius: 14px;
+      }
+
+      .question {
+        margin-bottom: 20px;
+        padding: 30px;
+        background: white;
+        border: 1px solid #ececec;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      .question-number {
+        margin-bottom: 5px;
+        color: #777;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .question h2 {
+        margin: 0 0 18px;
+        font-size: 21px;
+      }
+
+      .answer {
+        margin: 18px 0;
+        padding: 15px 18px;
+        background: #f0f7ff;
+        border-left: 4px solid #2274e0;
+        border-radius: 6px;
+      }
+
+      .answer strong {
+        color: #145fc0;
+      }
+
+      .explanation {
+        margin-top: 15px;
+        color: #555;
+      }
+
+      .explanation-title {
+        margin-bottom: 5px;
+        color: #222;
+        font-weight: 700;
+      }
+
+      pre {
+        margin: 18px 0;
+        padding: 20px;
+        overflow-x: auto;
+        background: #1e1e1e;
+        color: #f8f8f8;
+        border-radius: 9px;
+        font-family: Consolas, Monaco, monospace;
+        font-size: 14px;
+        line-height: 1.7;
+        white-space: pre-wrap;
+      }
+
+      code {
+        font-family: Consolas, Monaco, monospace;
+      }
+
+      .notice {
+        margin-top: 15px;
+        padding: 15px;
+        background: #fff8e6;
+        border-radius: 8px;
+        color: #765c16;
+        font-size: 14px;
+      }
+
+      footer {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        color: #888;
+        font-size: 14px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          margin-top: 35px;
+        }
+
+        h1 {
+          font-size: 29px;
+        }
+
+        .question {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <p class="badge">Python Day 2</p>
+
+        <h1>
+          Python 기초 미니 테스트<br />
+          정답 및 해설
+        </h1>
+
+        <p class="description">
+          문자열 · 인덱스 · 슬라이싱 · 리스트 · 조건문 문제의 정답과 핵심 개념을
+          확인하세요.
+        </p>
+      </header>
+
+      <section class="summary">
+        <strong>복습 안내</strong>
+
+        <p>
+          객관식은 정답 번호만 확인하지 말고 왜 해당 결과가 나오는지 코드를 직접
+          다시 실행해보세요.
+        </p>
+
+        <p>
+          6~10번은 주관식 코드 문제이므로 아래 코드는 하나의
+          <strong>모범답안</strong>입니다. 실행 결과와 요구 조건을 만족한다면
+          코드가 완전히 같지 않아도 정답이 될 수 있습니다.
+        </p>
+      </section>
+
+      <!-- 1번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 01</div>
+
+        <h2>문자열 함수와 메서드</h2>
+
+        <p>함수(Function)와 메서드(Method)의 사용 방법이 올바르지 않은 것은?</p>
+
+        <div class="answer">
+          <strong>정답 : ④ "Python".len()</strong>
+        </div>
+
+        <div class="explanation">
+          <div class="explanation-title">해설</div>
+
+          <code>len()</code>은 문자열에 붙여 사용하는 메서드가 아니라 값을
+          인자로 전달하는 함수입니다.
+
+          <pre>
+len("Python")
+# 6</pre
+          >
+
+          반면 <code>find()</code>, <code>count()</code>는 문자열 객체에 붙여
+          사용하는 메서드입니다.
+
+          <pre>
+"Python".find("t")
+
+"banana".count("a")</pre
+          >
+
+          따라서 다음 코드는 사용할 수 없습니다.
+
+          <pre>"Python".len()</pre>
+        </div>
+      </section>
+
+      <!-- 2번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 02</div>
+
+        <h2>문자열 인덱스</h2>
+
+        <pre>
+text = "Python"
+
+print(text[0])
+print(text[2])
+print(text[-1])</pre
+        >
+
+        <div class="answer">
+          <strong>정답 : ① P, t, n</strong>
+        </div>
+
+        <div class="explanation">
+          <div class="explanation-title">해설</div>
+
+          Python 문자열의 인덱스는 0부터 시작합니다.
+
+          <pre>
+문자   P  y  t  h  o  n
+양수   0  1  2  3  4  5
+음수  -6 -5 -4 -3 -2 -1</pre
+          >
+
+          따라서
+
+          <pre>
+text[0]
+# P
+
+text[2]
+# t
+
+text[-1]
+# n</pre
+          >
+
+          이 됩니다.
+        </div>
+      </section>
+
+      <!-- 3번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 03</div>
+
+        <h2>문자열 슬라이싱</h2>
+
+        <pre>
+text = "DataAnalysis"
+
+print(text[0:4])</pre
+        >
+
+        <div class="answer">
+          <strong>정답 : ① Data</strong>
+        </div>
+
+        <div class="explanation">
+          <div class="explanation-title">해설</div>
+
+          슬라이싱은 다음 형태로 사용합니다.
+
+          <pre>문자열[시작 인덱스 : 끝 인덱스]</pre>
+
+          중요한 점은
+          <strong>끝 인덱스의 문자는 포함하지 않는다는 것</strong>입니다. 따라서
+
+          <pre>text[0:4]</pre>
+
+          는 인덱스 0, 1, 2, 3에 해당하는
+
+          <pre>Data</pre>
+
+          만 가져옵니다.
+        </div>
+      </section>
+
+      <!-- 4번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 04</div>
+
+        <h2>strip() 메서드</h2>
+
+        <pre>
+text = "###Python###"
+
+print(text.strip("#"))</pre
+        >
+
+        <div class="answer">
+          <strong>정답 : ② Python</strong>
+        </div>
+
+        <div class="explanation">
+          <div class="explanation-title">해설</div>
+
+          <code>strip()</code>은 문자열의 <strong>양쪽 끝</strong>에서 지정한
+          문자를 제거합니다.
+
+          <pre>
+"###Python###".strip("#")
+
+# Python</pre
+          >
+
+          문자열 중간에 있는 문자까지 모두 삭제하는 것은 아닙니다. 예를 들어
+          다음 문자열에서
+
+          <pre>"Py#thon".strip("#")</pre>
+
+          가운데 있는 <code>#</code>는 제거되지 않습니다.
+        </div>
+      </section>
+
+      <!-- 5번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 05</div>
+
+        <h2>리스트 메서드</h2>
+
+        <pre>
+fruits = ["apple", "banana"]
+
+fruits.append("orange")
+fruits.insert(1, "grape")
+fruits.pop()
+
+print(fruits)</pre
+        >
+
+        <div class="answer">
+          <strong>정답 : ② ["apple", "grape", "banana"]</strong>
+        </div>
+
+        <div class="explanation">
+          <div class="explanation-title">실행 과정</div>
+
+          처음 리스트는
+
+          <pre>["apple", "banana"]</pre>
+
+          입니다.
+
+          <code>append()</code> 실행 후
+
+          <pre>
+fruits.append("orange")
+
+["apple", "banana", "orange"]</pre
+          >
+
+          <code>insert()</code> 실행 후
+
+          <pre>
+fruits.insert(1, "grape")
+
+["apple", "grape", "banana", "orange"]</pre
+          >
+
+          마지막으로 인자 없이 <code>pop()</code>을 실행하면 리스트의 마지막
+          요소가 삭제됩니다.
+
+          <pre>
+fruits.pop()
+
+["apple", "grape", "banana"]</pre
+          >
+        </div>
+      </section>
+
+      <!-- 6번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 06</div>
+
+        <h2>문자열 count()</h2>
+
+        <div class="answer">
+          <strong>모범답안</strong>
+        </div>
+
+        <pre>
+message = "Python is easy. Python is powerful."
+
+print(message.count("Python"))</pre
+        >
+
+        <div class="explanation">
+          <div class="explanation-title">실행 결과</div>
+
+          <pre>2</pre>
+
+          <code>count()</code>는 문자열에서 특정 문자열이 몇 번 등장하는지를
+          반환합니다.
+
+          <pre>message.count("Python")</pre>
+
+          의 결과가 숫자 <code>2</code>이므로 <code>print()</code>를 사용하면
+          2가 출력됩니다.
+        </div>
+      </section>
+
+      <!-- 7번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 07</div>
+
+        <h2>find() + 슬라이싱</h2>
+
+        <div class="answer">
+          <strong>모범답안</strong>
+        </div>
+
+        <pre>
+email = "student@gmail.com"
+
+index = email.find("@")
+
+print(email[:index])</pre
+        >
+
+        <div class="explanation">
+          <div class="explanation-title">핵심 개념</div>
+
+          먼저
+
+          <pre>email.find("@")</pre>
+
+          를 이용하여 <code>@</code> 문자의 위치를 찾습니다. 그 위치를
+          <code>index</code> 변수에 저장한 후
+
+          <pre>email[:index]</pre>
+
+          를 사용하면 문자열의 처음부터
+          <code>@</code> 직전까지 가져올 수 있습니다. 결과는
+
+          <pre>student</pre>
+
+          입니다. 이 문제의 핵심은
+          <strong>메서드의 반환값을 다른 코드에 다시 활용하는 것</strong>입니다.
+        </div>
+      </section>
+
+      <!-- 8번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 08</div>
+
+        <h2>리스트 조작</h2>
+
+        <div class="answer">
+          <strong>모범답안</strong>
+        </div>
+
+        <pre>
+students = ["민수", "영희", "철수"]
+
+students.append("지수")
+students.insert(1, "준호")
+students.remove("철수")
+
+print(students)</pre
+        >
+
+        <div class="explanation">
+          <div class="explanation-title">실행 결과</div>
+
+          <pre>["민수", "준호", "영희", "지수"]</pre>
+
+          각각의 메서드는 다음 역할을 합니다.
+
+          <pre>
+append()
+→ 리스트 마지막에 값 추가
+
+insert()
+→ 원하는 인덱스 위치에 값 추가
+
+remove()
+→ 지정한 값을 찾아 삭제</pre
+          >
+        </div>
+      </section>
+
+      <!-- 9번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 09</div>
+
+        <h2>조건문 + and</h2>
+
+        <div class="answer">
+          <strong>모범답안</strong>
+        </div>
+
+        <pre>
+age = 25
+has_ticket = True
+
+if age >= 20 and has_ticket == True:
+    print("입장 가능합니다.")</pre
+        >
+
+        <div class="explanation">
+          <div class="explanation-title">핵심 개념</div>
+
+          <code>and</code>는 양쪽 조건이 모두 <code>True</code>일 때만 전체
+          조건이 <code>True</code>가 됩니다.
+
+          <pre>
+age >= 20
+# True
+
+has_ticket == True
+# True
+
+True and True
+# True</pre
+          >
+
+          따라서 실행문이 실행됩니다. 다음처럼 작성해도 올바른 코드입니다.
+
+          <pre>
+if age >= 20 and has_ticket:
+    print("입장 가능합니다.")</pre
+          >
+        </div>
+      </section>
+
+      <!-- 10번 -->
+      <section class="question">
+        <div class="question-number">QUESTION 10</div>
+
+        <h2>종합 문제</h2>
+
+        <div class="answer">
+          <strong>모범답안</strong>
+        </div>
+
+        <pre>
+user_id = input("아이디를 입력하세요: ")
+
+user_id = user_id.strip()
+
+if user_id == "admin" or user_id == "manager":
+    print("관리자입니다.")
+else:
+    print("일반 사용자입니다.")</pre
+        >
+
+        <div class="explanation">
+          <div class="explanation-title">코드 실행 흐름</div>
+
+          <pre>
+input()
+↓
+사용자가 아이디 입력
+↓
+strip()
+↓
+앞뒤 공백 제거
+↓
+admin 또는 manager인지 비교
+↓
+or 연산
+↓
+if / else
+↓
+결과 출력</pre
+          >
+
+          예를 들어 사용자가
+
+          <pre>   admin   </pre>
+
+          처럼 입력해도
+
+          <pre>user_id.strip()</pre>
+
+          이후에는
+
+          <pre>admin</pre>
+
+          이 되므로 관리자 조건을 만족합니다.
+        </div>
+
+        <div class="notice">
+          ※ 주관식 코드는 위 모범답안과 완전히 같지 않아도 됩니다. 문제에서
+          요구한 함수와 연산자를 사용하고, 실행 결과가 올바르면 정답으로 판단할
+          수 있습니다.
+        </div>
+      </section>
+
+      <footer>
+        Python Day 2 · Mini Test<br />
+        틀린 문제는 Jupyter Notebook에서 직접 다시 실행해보세요.
+      </footer>
+    </div>
+  </body>
+</html>

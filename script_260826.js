@@ -114,7 +114,8 @@ submitBtn.addEventListener("click", async () => {
 
   try {
     await fetch(
-      "https://script.google.com/macros/s/AKfycbzuJurIVqKHKKDJP88es5Khy3fpueJMAuwhpusagG_Yztadhb8NKDqL1EwQoY541gTH/exec",
+      "https://script.google.com/macros/s/AKfycbzE4WtjTyX6FY5eiKYizps6RIBYEcz2mij0X1n-5xAbliIFypBTeeefpOB1Nd6t3SN1/exec",
+
       {
         method: "POST",
 
