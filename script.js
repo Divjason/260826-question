@@ -1,145 +1,149 @@
+// ==========================================
+// 제출 버튼
+// ==========================================
+
 const submitBtn = document.querySelector("#submitBtn");
 
-// ======================================
+// ==========================================
 // 객관식 정답
-// ======================================
+// ==========================================
 
 const answers = {
-  q1: "4",
+  q1: "2",
   q2: "1",
-  q3: "1",
-  q4: "2",
-  q5: "2",
+  q3: "2",
+  q4: "3",
+  q5: "3",
 };
 
-// ======================================
-// 문제 제목
-// ======================================
+// ==========================================
+// 객관식 문제 제목
+// ==========================================
 
 const questionTitles = {
-  q1: "문자열 함수와 메서드",
-  q2: "문자열 인덱스",
-  q3: "문자열 슬라이싱",
-  q4: "strip() 메서드",
-  q5: "리스트 메서드",
+  q1: "for 반복문",
+
+  q2: "range() 함수",
+
+  q3: "while 반복문",
+
+  q4: "함수와 return",
+
+  q5: "Git과 GitHub",
 };
 
-// ======================================
+// ==========================================
 // 객관식 보기 내용
-// 이메일에서 번호만 보이지 않게 하기 위함
-// ======================================
+// ==========================================
 
 const optionTexts = {
   q1: {
-    1: 'len("Python")',
-    2: '"Python".find("t")',
-    3: '"banana".count("a")',
-    4: '"Python".len()',
+    1: "0, 1, 2, 3, 4",
+
+    2: "1, 2, 3, 4",
+
+    3: "1, 2, 3, 4, 5",
+
+    4: "0, 1, 2, 3",
   },
 
   q2: {
-    1: "P, t, n",
-    2: "P, y, n",
-    3: "P, t, o",
-    4: "y, t, n",
+    1: "2, 4, 6, 8",
+
+    2: "2, 4, 6, 8, 10",
+
+    3: "2, 3, 4, 5, 6, 7, 8, 9",
+
+    4: "0, 2, 4, 6, 8",
   },
 
   q3: {
-    1: "Data",
-    2: "DataA",
-    3: "ataA",
-    4: "Dat",
+    1: "0, 1, 2",
+
+    2: "1, 2, 3",
+
+    3: "1, 2, 3, 4",
+
+    4: "무한 반복된다.",
   },
 
   q4: {
-    1: "###Python###",
-    2: "Python",
-    3: "###Python",
-    4: "Python###",
+    1: "10",
+
+    2: "20",
+
+    3: "30",
+
+    4: "아무것도 출력되지 않는다.",
   },
 
   q5: {
-    1: '["apple", "banana"]',
-    2: '["apple", "grape", "banana"]',
-    3: '["grape", "banana", "orange"]',
-    4: '["apple", "grape", "banana", "orange"]',
+    1: "Git과 GitHub는 완전히 같은 프로그램이다.",
+
+    2: "Git은 웹사이트이고 GitHub는 Python의 내장함수이다.",
+
+    3: "Git은 버전 관리 시스템이고 GitHub는 Git 저장소를 온라인에서 관리·공유할 수 있는 서비스이다.",
+
+    4: "GitHub를 사용하려면 반드시 Python 프로그램이 필요하다.",
   },
 };
 
-// ======================================
-// 제출 버튼
-// ======================================
+// ==========================================
+// 제출 버튼 클릭
+// ==========================================
 
-submitBtn.addEventListener("click", async () => {
-  // ----------------------------------
-  // 학생 이름
-  // ----------------------------------
+submitBtn.addEventListener("click", async function () {
+  // ========================================
+  // 학생 이름 확인
+  // ========================================
 
   const studentName = document.querySelector("#studentName").value.trim();
 
-  if (!studentName) {
+  if (studentName === "") {
     alert("이름을 입력해주세요.");
 
     return;
   }
 
-  // ----------------------------------
-  // 모든 문제 답변 여부 검사
-  // ----------------------------------
+  // ========================================
+  // 객관식 답안 확인
+  // ========================================
+
+  const multipleChoiceAnswers = {};
+
+  const wrongAnswers = [];
+
+  let correctCount = 0;
 
   for (let i = 1; i <= 5; i++) {
-    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const key = "q" + i;
 
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+
+    // 선택하지 않은 문제가 있는 경우
     if (!selected) {
       alert(`${i}번 객관식 문제에 답해주세요.`);
 
       return;
     }
-  }
-
-  for (let i = 6; i <= 10; i++) {
-    const answer = document.querySelector(`[name="q${i}"]`).value.trim();
-
-    if (!answer) {
-      alert(`${i}번 주관식 문제에 답해주세요.`);
-
-      return;
-    }
-  }
-
-  let correctCount = 0;
-
-  let wrongCount = 0;
-
-  const wrongAnswers = [];
-
-  const multipleChoiceAnswers = {};
-
-  // ======================================
-  // 객관식 채점
-  // ======================================
-
-  for (let key in answers) {
-    const selected = document.querySelector(`input[name="${key}"]:checked`);
 
     const studentAnswer = selected.value;
 
     const correctAnswer = answers[key];
 
-    // 학생이 입력한 모든 객관식 답안 저장
+    // 학생이 제출한 답안 저장
     multipleChoiceAnswers[key] = {
       answerNumber: studentAnswer,
 
       answerText: optionTexts[key][studentAnswer],
     };
 
+    // 정답 확인
     if (studentAnswer === correctAnswer) {
       correctCount++;
     } else {
-      wrongCount++;
-
       wrongAnswers.push({
-        question: key.replace("q", ""),
+        question: i,
 
         title: questionTitles[key],
 
@@ -154,56 +158,73 @@ submitBtn.addEventListener("click", async () => {
     }
   }
 
-  // ======================================
-  // 주관식 답안
-  // ======================================
+  // ========================================
+  // 주관식 답안 확인
+  // ========================================
 
-  const subjectiveAnswers = {
-    q6: document.querySelector('[name="q6"]').value,
+  const subjectiveAnswers = {};
 
-    q7: document.querySelector('[name="q7"]').value,
+  for (let i = 6; i <= 10; i++) {
+    const key = "q" + i;
 
-    q8: document.querySelector('[name="q8"]').value,
+    const textarea = document.querySelector(`textarea[name="${key}"]`);
 
-    q9: document.querySelector('[name="q9"]').value,
+    const answer = textarea.value.trim();
 
-    q10: document.querySelector('[name="q10"]').value,
-  };
+    // 주관식 미작성 확인
+    if (answer === "") {
+      alert(`${i}번 주관식 문제에 답해주세요.`);
 
-  // ======================================
-  // 결과 데이터
-  // ======================================
+      textarea.focus();
+
+      return;
+    }
+
+    subjectiveAnswers[key] = answer;
+  }
+
+  // ========================================
+  // 객관식 오답 개수
+  // ========================================
+
+  const wrongCount = 5 - correctCount;
+
+  // ========================================
+  // Apps Script로 전송할 데이터
+  // ========================================
 
   const resultData = {
-    testName: "Python Day 2 Mini Test",
+    testName: "Python Day 3 Mini Test",
 
-    studentName,
+    studentName: studentName,
 
-    correctCount,
+    correctCount: correctCount,
 
-    wrongCount,
+    wrongCount: wrongCount,
 
     objectiveScore: correctCount * 10,
 
-    multipleChoiceAnswers,
+    multipleChoiceAnswers: multipleChoiceAnswers,
 
-    wrongAnswers,
+    wrongAnswers: wrongAnswers,
 
-    subjectiveAnswers,
+    subjectiveAnswers: subjectiveAnswers,
 
     submittedAt: new Date().toLocaleString("ko-KR"),
   };
 
-  console.log(resultData);
+  // ========================================
+  // 제출 버튼 잠금
+  // ========================================
 
-  // ======================================
-  // Google Apps Script 전송
-  // ======================================
+  submitBtn.disabled = true;
+
+  submitBtn.textContent = "제출 중...";
 
   try {
-    submitBtn.disabled = true;
-
-    submitBtn.innerText = "제출 중...";
+    // ======================================
+    // Google Apps Script로 전송
+    // ======================================
 
     await fetch(
       "https://script.google.com/macros/s/AKfycbzE4WtjTyX6FY5eiKYizps6RIBYEcz2mij0X1n-5xAbliIFypBTeeefpOB1Nd6t3SN1/exec",
@@ -221,11 +242,22 @@ submitBtn.addEventListener("click", async () => {
       },
     );
 
-    alert(`${studentName}님의 답안이 제출되었습니다.`);
+    // ======================================
+    // 제출 완료
+    // ======================================
 
-    showResult(studentName, correctCount, wrongCount);
+    alert("답안이 정상적으로 제출되었습니다.");
 
-    submitBtn.innerText = "제출 완료";
+    // 학생 화면에 결과 표시
+    showResult(
+      studentName,
+
+      correctCount,
+
+      wrongCount,
+    );
+
+    submitBtn.textContent = "제출 완료";
   } catch (error) {
     console.error(error);
 
@@ -233,18 +265,16 @@ submitBtn.addEventListener("click", async () => {
 
     submitBtn.disabled = false;
 
-    submitBtn.innerText = "제출하기";
+    submitBtn.textContent = "답안 제출하기";
   }
 });
 
-// ======================================
-// 학생 화면 결과
-// ======================================
+// ==========================================
+// 학생 화면 결과 표시
+// ==========================================
 
 function showResult(studentName, correctCount, wrongCount) {
   const result = document.querySelector("#result");
-
-  result.classList.remove("hidden");
 
   result.innerHTML = `
 
@@ -256,6 +286,8 @@ function showResult(studentName, correctCount, wrongCount) {
       <strong>${studentName}</strong>님의
       답안이 정상적으로 제출되었습니다.
     </p>
+
+    <hr>
 
     <p>
       객관식 정답 :
@@ -272,6 +304,8 @@ function showResult(studentName, correctCount, wrongCount) {
     </p>
 
   `;
+
+  result.classList.remove("hidden");
 
   result.scrollIntoView({
     behavior: "smooth",
