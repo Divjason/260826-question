@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Marketing Day 1 Mini Test</title>
+    <title>Python Day 4 Mini Test</title>
 
     <!-- 기존 CSS 재사용 -->
     <link rel="stylesheet" href="style.css" />
@@ -18,15 +18,11 @@
   ====================================== -->
 
       <header>
-        <p class="badge">Marketing Day 1</p>
+        <p class="badge">Python Day 4</p>
 
-        <h1>Marketing Day 1 Mini Test</h1>
+        <h1>Python Day 4 Mini Test</h1>
 
-        <p class="description">
-          Data · Information · Insight · Hypothesis · Decision
-          <br />
-          정량/정성 데이터 · Meta Pixel · D2C
-        </p>
+        <p class="description">List · Tuple · Dictionary · Set</p>
       </header>
 
       <!-- =====================================
@@ -55,8 +51,8 @@
         <p>권장 풀이시간 : 30~35분</p>
 
         <p>
-          주관식은 정답 문장을 외워서 작성하기보다 오늘 학습한 개념을 바탕으로
-          자신의 생각을 작성하세요.
+          오늘 학습한 List, Tuple, Dictionary, Set의 특징과 활용 방법을 확인하는
+          문제입니다.
         </p>
       </section>
 
@@ -68,35 +64,38 @@
         <section class="question">
           <div class="question-number">QUESTION 01 · 객관식</div>
 
-          <h2>Data → Decision</h2>
+          <h2>자료구조의 특징</h2>
 
           <p>
-            오늘 학습한 마케팅 데이터를 의사결정으로 발전시키는 과정으로 가장
-            적절한 것은?
+            다음 중 Python 자료구조에 대한 설명으로
+            <strong>올바르지 않은 것</strong>은?
           </p>
 
           <label class="option">
             <input type="radio" name="q1" value="1" />
 
-            ① Data → Insight → Information → Decision → Hypothesis
+            ① List는 여러 개의 값을 순서대로 저장할 수 있으며 값의 수정이
+            가능하다.
           </label>
 
           <label class="option">
             <input type="radio" name="q1" value="2" />
 
-            ② Data → Information → Insight → Hypothesis → Decision
+            ② Tuple은 여러 개의 값을 순서대로 저장할 수 있지만 생성 후 요소를
+            직접 수정할 수 없다.
           </label>
 
           <label class="option">
             <input type="radio" name="q1" value="3" />
 
-            ③ Information → Data → Hypothesis → Insight → Decision
+            ③ Dictionary는 Key : Value의 형태로 데이터를 저장할 수 있다.
           </label>
 
           <label class="option">
             <input type="radio" name="q1" value="4" />
 
-            ④ Data → Hypothesis → Information → Decision → Insight
+            ④ Set은 데이터의 입력 순서를 기준으로 인덱스를 이용하여 요소에
+            접근하는 자료구조이다.
           </label>
         </section>
 
@@ -107,41 +106,38 @@
         <section class="question">
           <div class="question-number">QUESTION 02 · 객관식</div>
 
-          <h2>Information과 Insight</h2>
+          <h2>List</h2>
 
-          <p>어떤 D2C 쇼핑몰에서 다음 결과를 확인했습니다.</p>
+          <p>다음 코드의 실행 결과로 올바른 것은?</p>
 
-          <blockquote>
-            모바일 방문자의 상품 상세페이지 이탈률이 PC 방문자보다 높다.
-          </blockquote>
+          <pre><code>data = [10, 20, 30, 40]
 
-          <p>이 결과를 바탕으로 마케터가 다음과 같이 판단했습니다.</p>
+data[1] = 100
 
-          <blockquote>
-            모바일 상품 상세페이지의 구매 버튼이나 상품정보 전달 방식에 문제가
-            있을 가능성이 있다.
-          </blockquote>
-
-          <p>두 번째 내용은 다음 중 어디에 가장 가깝습니까?</p>
+print(data)</code></pre>
 
           <label class="option">
             <input type="radio" name="q2" value="1" />
-            ① Data
+
+            ① [10, 20, 30, 40]
           </label>
 
           <label class="option">
             <input type="radio" name="q2" value="2" />
-            ② Information
+
+            ② [10, 100, 30, 40]
           </label>
 
           <label class="option">
             <input type="radio" name="q2" value="3" />
-            ③ Insight
+
+            ③ [100, 20, 30, 40]
           </label>
 
           <label class="option">
             <input type="radio" name="q2" value="4" />
-            ④ Decision
+
+            ④ 오류가 발생한다.
           </label>
         </section>
 
@@ -152,32 +148,35 @@
         <section class="question">
           <div class="question-number">QUESTION 03 · 객관식</div>
 
-          <h2>정량적 데이터와 정성적 데이터</h2>
+          <h2>Tuple</h2>
 
           <p>
             다음 중
-            <strong>정성적 데이터(Qualitative Data)</strong>에 가장 가까운 것은?
+            <strong>요소가 하나뿐인 Tuple</strong>을 올바르게 생성한 것은?
           </p>
 
           <label class="option">
             <input type="radio" name="q3" value="1" />
-            ① 광고 클릭 수 3,520회
+
+            ① data = (10)
           </label>
 
           <label class="option">
             <input type="radio" name="q3" value="2" />
-            ② 구매 전환율 3.2%
+
+            ② data = (10,)
           </label>
 
           <label class="option">
             <input type="radio" name="q3" value="3" />
 
-            ③ 고객 인터뷰에서 "배송비 때문에 구매를 망설였다"는 의견
+            ③ data = [10]
           </label>
 
           <label class="option">
             <input type="radio" name="q3" value="4" />
-            ④ 일평균 사이트 방문자 15,000명
+
+            ④ data = {10}
           </label>
         </section>
 
@@ -188,37 +187,40 @@
         <section class="question">
           <div class="question-number">QUESTION 04 · 객관식</div>
 
-          <h2>Meta Pixel</h2>
+          <h2>Dictionary</h2>
 
-          <p>
-            D2C 쇼핑몰에
-            <strong>Meta Pixel</strong>을 설치하는 가장 중요한 목적은
-            무엇입니까?
-          </p>
+          <p>다음 코드의 실행 결과는?</p>
+
+          <pre><code>student = {
+    "name": "David",
+    "age": 25,
+    "course": "Python"
+}
+
+print(student["course"])</code></pre>
 
           <label class="option">
             <input type="radio" name="q4" value="1" />
 
-            ① 웹사이트 디자인을 자동으로 변경하기 위해
+            ① name
           </label>
 
           <label class="option">
             <input type="radio" name="q4" value="2" />
 
-            ② 웹사이트 방문자의 행동 및 전환 이벤트를 측정하고 광고 최적화에
-            활용하기 위해
+            ② David
           </label>
 
           <label class="option">
             <input type="radio" name="q4" value="3" />
 
-            ③ Instagram 팔로워를 자동으로 증가시키기 위해
+            ③ 25
           </label>
 
           <label class="option">
             <input type="radio" name="q4" value="4" />
 
-            ④ 상품 이미지를 Meta 광고 크기에 맞게 자동 변환하기 위해
+            ④ Python
           </label>
         </section>
 
@@ -229,49 +231,41 @@
         <section class="question">
           <div class="question-number">QUESTION 05 · 객관식</div>
 
-          <h2>Pixel Event</h2>
+          <h2>Set</h2>
 
-          <p>쇼핑몰 방문자가 다음과 같이 행동했습니다.</p>
+          <p>다음 코드의 실행 결과에 대한 설명으로 가장 적절한 것은?</p>
 
-          <pre><code>광고 클릭
-    ↓
-상품 상세페이지 방문
-    ↓
-장바구니 추가
-    ↓
-결제
-    ↓
-구매 완료</code></pre>
+          <pre><code>numbers = {1, 2, 2, 3, 3, 3}
 
-          <p>
-            Meta Pixel을 통해 이러한 행동을 이벤트로 수집하는 가장 중요한
-            이유는?
-          </p>
+print(numbers)</code></pre>
 
           <label class="option">
             <input type="radio" name="q5" value="1" />
 
-            ① 모든 방문자의 이름과 전화번호를 알아내기 위해
+            ① 1, 2, 2, 3, 3, 3이 모두 그대로 저장된다.
           </label>
 
           <label class="option">
             <input type="radio" name="q5" value="2" />
 
-            ② 어떤 행동이 실제 구매 전환으로 이어지는지 측정하고 광고 성과 및
-            최적화에 활용하기 위해
+            ② 중복된 값이 제거되어 1, 2, 3만 요소로 남는다.
           </label>
 
           <label class="option">
             <input type="radio" name="q5" value="3" />
 
-            ③ 웹사이트 서버를 빠르게 만들기 위해
+            ③ Set은 숫자를 저장할 수 없어 오류가 발생한다.
           </label>
 
           <label class="option">
             <input type="radio" name="q5" value="4" />
 
-            ④ 경쟁사의 광고비를 알아내기 위해
+            ④ 마지막 숫자 3만 저장된다.
           </label>
+
+          <p>
+            ※ Set은 출력 순서가 아니라 어떤 요소가 남는지를 기준으로 판단하세요.
+          </p>
         </section>
 
         <!-- =====================================
@@ -281,35 +275,28 @@
         <section class="question">
           <div class="question-number">QUESTION 06 · 주관식</div>
 
-          <h2>Data → Information → Insight</h2>
+          <h2>List 작성하기</h2>
 
-          <p>한 D2C 화장품 쇼핑몰에서 다음 데이터를 확인했습니다.</p>
+          <p>다음 List가 있습니다.</p>
 
-          <pre><code>상품 상세페이지 방문자 : 10,000명
+          <pre><code>fruits = ["apple", "banana", "orange"]</code></pre>
 
-장바구니 추가 : 2,000명
+          <p>다음 작업을 순서대로 수행하는 Python 코드를 작성하세요.</p>
 
-구매 완료 : 400명</code></pre>
+          <pre><code>① 마지막에 "grape" 추가
 
-          <p>위 데이터를 바탕으로 다음 두 가지를 작성하세요.</p>
+② 1번 인덱스에 "mango" 추가
 
-          <p>
-            <strong>① Information</strong><br />
-            숫자에서 객관적으로 확인할 수 있는 사실을 1개 작성하세요.
-          </p>
+③ "banana" 삭제
 
-          <p>
-            <strong>② Insight</strong><br />
-            해당 Information을 바탕으로 마케터가 생각해볼 수 있는 의미 또는
-            문제점을 1개 작성하세요.
-          </p>
+④ 최종 fruits 출력</code></pre>
+
+          <p>그리고 최종 출력 결과까지 작성하세요.</p>
 
           <textarea
             name="q6"
-            rows="10"
-            placeholder="① Information :
-
-② Insight :"
+            rows="12"
+            placeholder="Python 코드와 최종 출력 결과를 작성하세요."
           ></textarea>
         </section>
 
@@ -320,25 +307,33 @@
         <section class="question">
           <div class="question-number">QUESTION 07 · 주관식</div>
 
-          <h2>Insight → Hypothesis</h2>
+          <h2>Tuple 이해하기</h2>
+
+          <p>다음 Tuple이 있습니다.</p>
+
+          <pre><code>colors = ("red", "green", "blue")</code></pre>
+
+          <p>다음 두 가지를 작성하세요.</p>
 
           <p>
-            6번에서 발견한 Insight를 기반으로
-            <strong>검증 가능한 마케팅 가설(Hypothesis)</strong>
-            하나를 작성하세요.
+            <strong>①</strong>
+            "green"을 출력하는 코드를 작성하세요.
           </p>
 
-          <p>다음 형식을 참고할 수 있습니다.</p>
+          <p>
+            <strong>②</strong>
+            다음 코드를 실행하면 어떤 일이 발생하는지, 그리고 왜 그런지
+            설명하세요.
+          </p>
 
-          <blockquote>
-            만약 ____________ 한다면, ____________ 때문에 ____________ 지표가
-            개선될 것이다.
-          </blockquote>
+          <pre><code>colors[1] = "yellow"</code></pre>
 
           <textarea
             name="q7"
-            rows="8"
-            placeholder="마케팅 가설을 작성하세요."
+            rows="10"
+            placeholder="① 코드 :
+
+② 실행 결과 및 이유 :"
           ></textarea>
         </section>
 
@@ -349,26 +344,33 @@
         <section class="question">
           <div class="question-number">QUESTION 08 · 주관식</div>
 
-          <h2>정량 + 정성 데이터</h2>
+          <h2>Dictionary 활용하기</h2>
 
-          <p>어떤 쇼핑몰의 장바구니 이탈률이 매우 높다는 것을 발견했습니다.</p>
+          <p>다음 학생 정보를 Dictionary로 작성하세요.</p>
 
-          <p>이를 분석하기 위해 필요한 데이터를 각각 하나씩 제안하세요.</p>
+          <pre><code>이름 : 민수
+나이 : 24
+과정 : Python</code></pre>
 
-          <pre><code>① 정량적 데이터(Quantitative Data):
+          <p>Key는 다음과 같이 사용합니다.</p>
 
-② 정성적 데이터(Qualitative Data):</code></pre>
+          <pre><code>name
+age
+course</code></pre>
 
-          <p>그리고 왜 두 데이터를 함께 확인해야 하는지도 간단히 설명하세요.</p>
+          <p>이후 다음 정보를 추가하세요.</p>
+
+          <pre><code>score : 90</code></pre>
+
+          <p>
+            마지막으로 학생의
+            <strong>이름과 점수만 출력하는 코드</strong>까지 작성하세요.
+          </p>
 
           <textarea
             name="q8"
-            rows="10"
-            placeholder="① 정량적 데이터 :
-
-② 정성적 데이터 :
-
-③ 두 데이터를 함께 확인해야 하는 이유 :"
+            rows="14"
+            placeholder="Dictionary 생성 → score 추가 → 이름과 점수 출력 코드를 작성하세요."
           ></textarea>
         </section>
 
@@ -379,31 +381,32 @@
         <section class="question">
           <div class="question-number">QUESTION 09 · 주관식</div>
 
-          <h2>Meta Pixel 실무 적용</h2>
+          <h2>Set 활용하기</h2>
 
-          <p>다음과 같은 D2C 쇼핑몰이 있습니다.</p>
+          <p>다음은 두 광고 캠페인을 클릭한 사용자 ID입니다.</p>
 
-          <pre><code>Meta 광고
-    ↓
-D2C 쇼핑몰
-    ↓
-상품 상세페이지
-    ↓
-장바구니
-    ↓
-구매</code></pre>
+          <pre><code>campaign_a = {101, 102, 103, 104}
 
-          <p>
-            만약 이 쇼핑몰에
-            <strong>Meta Pixel이 전혀 설치되어 있지 않다면</strong>, 광고 운영
-            및 분석 측면에서 발생할 수 있는 문제를
-            <strong>2가지 이상</strong> 작성하세요.
-          </p>
+campaign_b = {103, 104, 105, 106}</code></pre>
+
+          <p>다음 세 가지를 구하는 Python 코드를 작성하세요.</p>
+
+          <pre><code>① 두 광고 중 하나 이상을 클릭한 전체 사용자
+
+② 두 광고를 모두 클릭한 사용자
+
+③ Campaign A만 클릭한 사용자</code></pre>
+
+          <p>그리고 각각 어떤 Set 연산인지도 함께 작성하세요.</p>
 
           <textarea
             name="q9"
-            rows="10"
-            placeholder="Meta Pixel이 없을 때 발생할 수 있는 문제를 2가지 이상 작성하세요."
+            rows="14"
+            placeholder="① 코드 / 연산명 :
+
+② 코드 / 연산명 :
+
+③ 코드 / 연산명 :"
           ></textarea>
         </section>
 
@@ -414,54 +417,85 @@ D2C 쇼핑몰
         <section class="question">
           <div class="question-number">QUESTION 10 · 종합 주관식</div>
 
-          <h2>마케터의 Decision</h2>
-
-          <p>Meta 광고를 통해 D2C 쇼핑몰로 고객을 유입시키고 있습니다.</p>
-
-          <p>Pixel 데이터를 분석했더니:</p>
-
-          <pre><code>광고 클릭 : 많음
-
-상품 상세페이지 방문 : 많음
-
-장바구니 추가 : 많음
-
-구매 완료 : 매우 적음</code></pre>
+          <h2>상황에 맞는 자료구조 선택</h2>
 
           <p>
-            추가로 고객 인터뷰를 진행했더니 다음 의견이 반복적으로
-            발견되었습니다.
+            다음 A~D 상황에 가장 적절한 Python 자료구조를 선택하고 이유까지
+            작성하세요.
           </p>
 
-          <blockquote>
-            "결제 단계에서 배송비가 추가되는 것을 보고 구매를 포기했어요."
-          </blockquote>
+          <h3>A</h3>
 
-          <p>위 상황을 바탕으로 다음 4가지를 작성하세요.</p>
+          <p>고객이 장바구니에 담은 상품:</p>
 
-          <pre><code>① Information :
+          <pre><code>아메리카노
+카페라떼
+바닐라라떼</code></pre>
 
-② Insight :
+          <p>상품은 추가되거나 삭제될 수 있고 순서도 중요합니다.</p>
 
-③ Hypothesis :
+          <h3>B</h3>
 
-④ Decision :</code></pre>
+          <p>상품 하나의 정보:</p>
+
+          <pre><code>상품명 : 아메리카노
+가격 : 3000
+카테고리 : Coffee</code></pre>
+
+          <p>각 데이터가 무엇을 의미하는지 구분해서 저장해야 합니다.</p>
+
+          <h3>C</h3>
+
+          <p>이벤트 참여 고객 ID:</p>
+
+          <pre><code>101
+102
+102
+103
+103
+104</code></pre>
+
+          <p>중복된 고객은 한 명으로 처리해야 합니다.</p>
+
+          <h3>D</h3>
+
+          <p>RGB 색상값:</p>
+
+          <pre><code>255
+128
+0</code></pre>
+
+          <p>
+            프로그램 실행 중 값이 변경되지 않는 고정된 하나의 색상 정보로
+            사용합니다.
+          </p>
+
+          <p>다음 중 선택하세요.</p>
+
+          <pre><code>List
+Tuple
+Dictionary
+Set</code></pre>
 
           <textarea
             name="q10"
-            rows="14"
-            placeholder="① Information :
+            rows="16"
+            placeholder="A :
+이유 :
 
-② Insight :
+B :
+이유 :
 
-③ Hypothesis :
+C :
+이유 :
 
-④ Decision :"
+D :
+이유 :"
           ></textarea>
         </section>
 
         <!-- =====================================
-         제출
+         제출 버튼
     ====================================== -->
 
         <button type="button" id="submitBtn" class="submit-btn">
@@ -469,7 +503,10 @@ D2C 쇼핑몰
         </button>
       </form>
 
-      <!-- 결과 -->
+      <!-- =====================================
+       제출 결과
+  ====================================== -->
+
       <div id="result" class="result hidden"></div>
     </div>
 

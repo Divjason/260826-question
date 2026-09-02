@@ -1,6 +1,5 @@
 // ==========================================
-// Python Day 4 Mini Test
-// List · Tuple · Dictionary · Set
+// Marketing Day 1 Mini Test
 // ==========================================
 
 const submitBtn = document.querySelector("#submitBtn");
@@ -10,27 +9,27 @@ const submitBtn = document.querySelector("#submitBtn");
 // ==========================================
 
 const answers = {
-  q1: "4",
-  q2: "2",
-  q3: "2",
-  q4: "4",
+  q1: "2",
+  q2: "3",
+  q3: "3",
+  q4: "2",
   q5: "2",
 };
 
 // ==========================================
-// 객관식 문제 제목
+// 문제 제목
 // ==========================================
 
 const questionTitles = {
-  q1: "자료구조의 특징",
+  q1: "Data → Decision",
 
-  q2: "List",
+  q2: "Information과 Insight",
 
-  q3: "Tuple",
+  q3: "정량적 데이터와 정성적 데이터",
 
-  q4: "Dictionary",
+  q4: "Meta Pixel",
 
-  q5: "Set",
+  q5: "Pixel Event",
 };
 
 // ==========================================
@@ -39,53 +38,53 @@ const questionTitles = {
 
 const optionTexts = {
   q1: {
-    1: "List는 여러 개의 값을 순서대로 저장할 수 있으며 값의 수정이 가능하다.",
+    1: "Data → Insight → Information → Decision → Hypothesis",
 
-    2: "Tuple은 여러 개의 값을 순서대로 저장할 수 있지만 생성 후 요소를 직접 수정할 수 없다.",
+    2: "Data → Information → Insight → Hypothesis → Decision",
 
-    3: "Dictionary는 Key : Value의 형태로 데이터를 저장할 수 있다.",
+    3: "Information → Data → Hypothesis → Insight → Decision",
 
-    4: "Set은 데이터의 입력 순서를 기준으로 인덱스를 이용하여 요소에 접근하는 자료구조이다.",
+    4: "Data → Hypothesis → Information → Decision → Insight",
   },
 
   q2: {
-    1: "[10, 20, 30, 40]",
+    1: "Data",
 
-    2: "[10, 100, 30, 40]",
+    2: "Information",
 
-    3: "[100, 20, 30, 40]",
+    3: "Insight",
 
-    4: "오류가 발생한다.",
+    4: "Decision",
   },
 
   q3: {
-    1: "data = (10)",
+    1: "광고 클릭 수 3,520회",
 
-    2: "data = (10,)",
+    2: "구매 전환율 3.2%",
 
-    3: "data = [10]",
+    3: '고객 인터뷰에서 "배송비 때문에 구매를 망설였다"는 의견',
 
-    4: "data = {10}",
+    4: "일평균 사이트 방문자 15,000명",
   },
 
   q4: {
-    1: "name",
+    1: "웹사이트 디자인을 자동으로 변경하기 위해",
 
-    2: "David",
+    2: "웹사이트 방문자의 행동 및 전환 이벤트를 측정하고 광고 최적화에 활용하기 위해",
 
-    3: "25",
+    3: "Instagram 팔로워를 자동으로 증가시키기 위해",
 
-    4: "Python",
+    4: "상품 이미지를 Meta 광고 크기에 맞게 자동 변환하기 위해",
   },
 
   q5: {
-    1: "1, 2, 2, 3, 3, 3이 모두 그대로 저장된다.",
+    1: "모든 방문자의 이름과 전화번호를 알아내기 위해",
 
-    2: "중복된 값이 제거되어 1, 2, 3만 요소로 남는다.",
+    2: "어떤 행동이 실제 구매 전환으로 이어지는지 측정하고 광고 성과 및 최적화에 활용하기 위해",
 
-    3: "Set은 숫자를 저장할 수 없어 오류가 발생한다.",
+    3: "웹사이트 서버를 빠르게 만들기 위해",
 
-    4: "마지막 숫자 3만 저장된다.",
+    4: "경쟁사의 광고비를 알아내기 위해",
   },
 };
 
@@ -95,7 +94,7 @@ const optionTexts = {
 
 submitBtn.addEventListener("click", async function () {
   // ======================================
-  // 1. 학생 이름 확인
+  // 학생 이름
   // ======================================
 
   const studentName = document.querySelector("#studentName").value.trim();
@@ -109,7 +108,7 @@ submitBtn.addEventListener("click", async function () {
   }
 
   // ======================================
-  // 2. 객관식 채점
+  // 객관식 채점
   // ======================================
 
   const multipleChoiceAnswers = {};
@@ -123,7 +122,7 @@ submitBtn.addEventListener("click", async function () {
 
     const selected = document.querySelector(`input[name="${key}"]:checked`);
 
-    // 미응답 확인
+    // 미응답
     if (!selected) {
       alert(`${i}번 객관식 문제에 답해주세요.`);
 
@@ -134,20 +133,14 @@ submitBtn.addEventListener("click", async function () {
 
     const correctAnswer = answers[key];
 
-    // ====================================
-    // 학생 제출 답안 저장
-    // ====================================
-
+    // 학생 답안 저장
     multipleChoiceAnswers[key] = {
       answerNumber: studentAnswer,
 
       answerText: optionTexts[key][studentAnswer],
     };
 
-    // ====================================
     // 정답 여부
-    // ====================================
-
     if (studentAnswer === correctAnswer) {
       correctCount++;
     } else {
@@ -168,7 +161,7 @@ submitBtn.addEventListener("click", async function () {
   }
 
   // ======================================
-  // 3. 주관식 답안 확인
+  // 주관식 답안
   // ======================================
 
   const subjectiveAnswers = {};
@@ -192,7 +185,7 @@ submitBtn.addEventListener("click", async function () {
   }
 
   // ======================================
-  // 4. 결과 계산
+  // 결과 계산
   // ======================================
 
   const wrongCount = 5 - correctCount;
@@ -200,13 +193,11 @@ submitBtn.addEventListener("click", async function () {
   const objectiveScore = correctCount * 10;
 
   // ======================================
-  // 5. Apps Script 전송 데이터
+  // Apps Script 전송 데이터
   // ======================================
 
   const resultData = {
-    testName: "Python Day 4 Mini Test",
-
-    testScope: "List · Tuple · Dictionary · Set",
+    testName: "Marketing Day 1 Mini Test",
 
     studentName: studentName,
 
@@ -226,7 +217,7 @@ submitBtn.addEventListener("click", async function () {
   };
 
   // ======================================
-  // 6. 제출 버튼 비활성화
+  // 제출 버튼 잠금
   // ======================================
 
   submitBtn.disabled = true;
@@ -235,7 +226,7 @@ submitBtn.addEventListener("click", async function () {
 
   try {
     // ====================================
-    // 7. Google Apps Script로 전송
+    // Google Apps Script 전송
     // ====================================
 
     await fetch(
@@ -255,7 +246,7 @@ submitBtn.addEventListener("click", async function () {
     );
 
     // ====================================
-    // 8. 제출 완료
+    // 제출 완료
     // ====================================
 
     alert("답안이 정상적으로 제출되었습니다.");
@@ -272,7 +263,7 @@ submitBtn.addEventListener("click", async function () {
   } catch (error) {
     console.error(error);
 
-    alert("제출 중 오류가 발생했습니다.\n" + "잠시 후 다시 시도해주세요.");
+    alert("제출 중 오류가 발생했습니다.");
 
     submitBtn.disabled = false;
 

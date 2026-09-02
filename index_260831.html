@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Marketing Day 1 Mini Test</title>
+
+    <!-- 기존 CSS 재사용 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- =====================================
+       HEADER
+  ====================================== -->
+
+      <header>
+        <p class="badge">Marketing Day 1</p>
+
+        <h1>Marketing Day 1 Mini Test</h1>
+
+        <p class="description">
+          Data · Information · Insight · Hypothesis · Decision
+          <br />
+          정량/정성 데이터 · Meta Pixel · D2C
+        </p>
+      </header>
+
+      <!-- =====================================
+       학생 정보
+  ====================================== -->
+
+      <section class="student-info">
+        <h2>학생 정보</h2>
+
+        <label for="studentName"> 이름 </label>
+
+        <input type="text" id="studentName" placeholder="이름을 입력하세요" />
+      </section>
+
+      <!-- =====================================
+       시험 안내
+  ====================================== -->
+
+      <section class="test-info">
+        <h2>시험 안내</h2>
+
+        <p>총 10문항 / 100점</p>
+
+        <p>객관식 5문항 + 주관식 5문항</p>
+
+        <p>권장 풀이시간 : 30~35분</p>
+
+        <p>
+          주관식은 정답 문장을 외워서 작성하기보다 오늘 학습한 개념을 바탕으로
+          자신의 생각을 작성하세요.
+        </p>
+      </section>
+
+      <form id="quizForm">
+        <!-- =====================================
+         QUESTION 01
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 01 · 객관식</div>
+
+          <h2>Data → Decision</h2>
+
+          <p>
+            오늘 학습한 마케팅 데이터를 의사결정으로 발전시키는 과정으로 가장
+            적절한 것은?
+          </p>
+
+          <label class="option">
+            <input type="radio" name="q1" value="1" />
+
+            ① Data → Insight → Information → Decision → Hypothesis
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q1" value="2" />
+
+            ② Data → Information → Insight → Hypothesis → Decision
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q1" value="3" />
+
+            ③ Information → Data → Hypothesis → Insight → Decision
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q1" value="4" />
+
+            ④ Data → Hypothesis → Information → Decision → Insight
+          </label>
+        </section>
+
+        <!-- =====================================
+         QUESTION 02
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 02 · 객관식</div>
+
+          <h2>Information과 Insight</h2>
+
+          <p>어떤 D2C 쇼핑몰에서 다음 결과를 확인했습니다.</p>
+
+          <blockquote>
+            모바일 방문자의 상품 상세페이지 이탈률이 PC 방문자보다 높다.
+          </blockquote>
+
+          <p>이 결과를 바탕으로 마케터가 다음과 같이 판단했습니다.</p>
+
+          <blockquote>
+            모바일 상품 상세페이지의 구매 버튼이나 상품정보 전달 방식에 문제가
+            있을 가능성이 있다.
+          </blockquote>
+
+          <p>두 번째 내용은 다음 중 어디에 가장 가깝습니까?</p>
+
+          <label class="option">
+            <input type="radio" name="q2" value="1" />
+            ① Data
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q2" value="2" />
+            ② Information
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q2" value="3" />
+            ③ Insight
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q2" value="4" />
+            ④ Decision
+          </label>
+        </section>
+
+        <!-- =====================================
+         QUESTION 03
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 03 · 객관식</div>
+
+          <h2>정량적 데이터와 정성적 데이터</h2>
+
+          <p>
+            다음 중
+            <strong>정성적 데이터(Qualitative Data)</strong>에 가장 가까운 것은?
+          </p>
+
+          <label class="option">
+            <input type="radio" name="q3" value="1" />
+            ① 광고 클릭 수 3,520회
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q3" value="2" />
+            ② 구매 전환율 3.2%
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q3" value="3" />
+
+            ③ 고객 인터뷰에서 "배송비 때문에 구매를 망설였다"는 의견
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q3" value="4" />
+            ④ 일평균 사이트 방문자 15,000명
+          </label>
+        </section>
+
+        <!-- =====================================
+         QUESTION 04
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 04 · 객관식</div>
+
+          <h2>Meta Pixel</h2>
+
+          <p>
+            D2C 쇼핑몰에
+            <strong>Meta Pixel</strong>을 설치하는 가장 중요한 목적은
+            무엇입니까?
+          </p>
+
+          <label class="option">
+            <input type="radio" name="q4" value="1" />
+
+            ① 웹사이트 디자인을 자동으로 변경하기 위해
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q4" value="2" />
+
+            ② 웹사이트 방문자의 행동 및 전환 이벤트를 측정하고 광고 최적화에
+            활용하기 위해
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q4" value="3" />
+
+            ③ Instagram 팔로워를 자동으로 증가시키기 위해
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q4" value="4" />
+
+            ④ 상품 이미지를 Meta 광고 크기에 맞게 자동 변환하기 위해
+          </label>
+        </section>
+
+        <!-- =====================================
+         QUESTION 05
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 05 · 객관식</div>
+
+          <h2>Pixel Event</h2>
+
+          <p>쇼핑몰 방문자가 다음과 같이 행동했습니다.</p>
+
+          <pre><code>광고 클릭
+    ↓
+상품 상세페이지 방문
+    ↓
+장바구니 추가
+    ↓
+결제
+    ↓
+구매 완료</code></pre>
+
+          <p>
+            Meta Pixel을 통해 이러한 행동을 이벤트로 수집하는 가장 중요한
+            이유는?
+          </p>
+
+          <label class="option">
+            <input type="radio" name="q5" value="1" />
+
+            ① 모든 방문자의 이름과 전화번호를 알아내기 위해
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q5" value="2" />
+
+            ② 어떤 행동이 실제 구매 전환으로 이어지는지 측정하고 광고 성과 및
+            최적화에 활용하기 위해
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q5" value="3" />
+
+            ③ 웹사이트 서버를 빠르게 만들기 위해
+          </label>
+
+          <label class="option">
+            <input type="radio" name="q5" value="4" />
+
+            ④ 경쟁사의 광고비를 알아내기 위해
+          </label>
+        </section>
+
+        <!-- =====================================
+         QUESTION 06
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 06 · 주관식</div>
+
+          <h2>Data → Information → Insight</h2>
+
+          <p>한 D2C 화장품 쇼핑몰에서 다음 데이터를 확인했습니다.</p>
+
+          <pre><code>상품 상세페이지 방문자 : 10,000명
+
+장바구니 추가 : 2,000명
+
+구매 완료 : 400명</code></pre>
+
+          <p>위 데이터를 바탕으로 다음 두 가지를 작성하세요.</p>
+
+          <p>
+            <strong>① Information</strong><br />
+            숫자에서 객관적으로 확인할 수 있는 사실을 1개 작성하세요.
+          </p>
+
+          <p>
+            <strong>② Insight</strong><br />
+            해당 Information을 바탕으로 마케터가 생각해볼 수 있는 의미 또는
+            문제점을 1개 작성하세요.
+          </p>
+
+          <textarea
+            name="q6"
+            rows="10"
+            placeholder="① Information :
+
+② Insight :"
+          ></textarea>
+        </section>
+
+        <!-- =====================================
+         QUESTION 07
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 07 · 주관식</div>
+
+          <h2>Insight → Hypothesis</h2>
+
+          <p>
+            6번에서 발견한 Insight를 기반으로
+            <strong>검증 가능한 마케팅 가설(Hypothesis)</strong>
+            하나를 작성하세요.
+          </p>
+
+          <p>다음 형식을 참고할 수 있습니다.</p>
+
+          <blockquote>
+            만약 ____________ 한다면, ____________ 때문에 ____________ 지표가
+            개선될 것이다.
+          </blockquote>
+
+          <textarea
+            name="q7"
+            rows="8"
+            placeholder="마케팅 가설을 작성하세요."
+          ></textarea>
+        </section>
+
+        <!-- =====================================
+         QUESTION 08
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 08 · 주관식</div>
+
+          <h2>정량 + 정성 데이터</h2>
+
+          <p>어떤 쇼핑몰의 장바구니 이탈률이 매우 높다는 것을 발견했습니다.</p>
+
+          <p>이를 분석하기 위해 필요한 데이터를 각각 하나씩 제안하세요.</p>
+
+          <pre><code>① 정량적 데이터(Quantitative Data):
+
+② 정성적 데이터(Qualitative Data):</code></pre>
+
+          <p>그리고 왜 두 데이터를 함께 확인해야 하는지도 간단히 설명하세요.</p>
+
+          <textarea
+            name="q8"
+            rows="10"
+            placeholder="① 정량적 데이터 :
+
+② 정성적 데이터 :
+
+③ 두 데이터를 함께 확인해야 하는 이유 :"
+          ></textarea>
+        </section>
+
+        <!-- =====================================
+         QUESTION 09
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 09 · 주관식</div>
+
+          <h2>Meta Pixel 실무 적용</h2>
+
+          <p>다음과 같은 D2C 쇼핑몰이 있습니다.</p>
+
+          <pre><code>Meta 광고
+    ↓
+D2C 쇼핑몰
+    ↓
+상품 상세페이지
+    ↓
+장바구니
+    ↓
+구매</code></pre>
+
+          <p>
+            만약 이 쇼핑몰에
+            <strong>Meta Pixel이 전혀 설치되어 있지 않다면</strong>, 광고 운영
+            및 분석 측면에서 발생할 수 있는 문제를
+            <strong>2가지 이상</strong> 작성하세요.
+          </p>
+
+          <textarea
+            name="q9"
+            rows="10"
+            placeholder="Meta Pixel이 없을 때 발생할 수 있는 문제를 2가지 이상 작성하세요."
+          ></textarea>
+        </section>
+
+        <!-- =====================================
+         QUESTION 10
+    ====================================== -->
+
+        <section class="question">
+          <div class="question-number">QUESTION 10 · 종합 주관식</div>
+
+          <h2>마케터의 Decision</h2>
+
+          <p>Meta 광고를 통해 D2C 쇼핑몰로 고객을 유입시키고 있습니다.</p>
+
+          <p>Pixel 데이터를 분석했더니:</p>
+
+          <pre><code>광고 클릭 : 많음
+
+상품 상세페이지 방문 : 많음
+
+장바구니 추가 : 많음
+
+구매 완료 : 매우 적음</code></pre>
+
+          <p>
+            추가로 고객 인터뷰를 진행했더니 다음 의견이 반복적으로
+            발견되었습니다.
+          </p>
+
+          <blockquote>
+            "결제 단계에서 배송비가 추가되는 것을 보고 구매를 포기했어요."
+          </blockquote>
+
+          <p>위 상황을 바탕으로 다음 4가지를 작성하세요.</p>
+
+          <pre><code>① Information :
+
+② Insight :
+
+③ Hypothesis :
+
+④ Decision :</code></pre>
+
+          <textarea
+            name="q10"
+            rows="14"
+            placeholder="① Information :
+
+② Insight :
+
+③ Hypothesis :
+
+④ Decision :"
+          ></textarea>
+        </section>
+
+        <!-- =====================================
+         제출
+    ====================================== -->
+
+        <button type="button" id="submitBtn" class="submit-btn">
+          답안 제출하기
+        </button>
+      </form>
+
+      <!-- 결과 -->
+      <div id="result" class="result hidden"></div>
+    </div>
+
+    <script src="script_260831.js"></script>
+  </body>
+</html>
