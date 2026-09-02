@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Python Day 4 | 정답 및 해설</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 40px 20px;
+
+        background: #f5f7fa;
+        color: #222;
+
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+        line-height: 1.7;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      header {
+        margin-bottom: 40px;
+        padding: 40px;
+
+        background: white;
+        border-radius: 16px;
+
+        text-align: center;
+
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .badge {
+        display: inline-block;
+
+        margin-bottom: 10px;
+        padding: 6px 14px;
+
+        border-radius: 20px;
+
+        background: #222;
+        color: white;
+
+        font-size: 14px;
+      }
+
+      h1 {
+        margin: 10px 0;
+        font-size: 32px;
+      }
+
+      header p {
+        margin: 5px 0;
+        color: #666;
+      }
+
+      .answer-card {
+        margin-bottom: 24px;
+        padding: 30px;
+
+        background: white;
+        border-radius: 16px;
+
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .question-number {
+        margin-bottom: 8px;
+
+        color: #777;
+
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .answer-card h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+
+        font-size: 22px;
+      }
+
+      .correct-answer {
+        margin: 20px 0;
+        padding: 16px 20px;
+
+        border-left: 5px solid #222;
+
+        background: #f4f4f4;
+
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .model-answer {
+        margin: 20px 0;
+        padding: 20px;
+
+        border-radius: 10px;
+
+        background: #f5f7fa;
+      }
+
+      .explanation {
+        margin-top: 20px;
+      }
+
+      .explanation h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      pre {
+        overflow-x: auto;
+
+        margin: 18px 0;
+        padding: 20px;
+
+        border-radius: 10px;
+
+        background: #1e1e1e;
+        color: #f8f8f2;
+
+        line-height: 1.6;
+      }
+
+      code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      p code {
+        padding: 2px 6px;
+
+        border-radius: 4px;
+
+        background: #eee;
+        color: #222;
+      }
+
+      .important {
+        margin: 20px 0;
+        padding: 18px 20px;
+
+        border-radius: 10px;
+
+        background: #fff8e8;
+      }
+
+      table {
+        width: 100%;
+
+        margin-top: 20px;
+
+        border-collapse: collapse;
+
+        background: white;
+        color: #222;
+      }
+
+      th,
+      td {
+        padding: 12px;
+
+        border: 1px solid #ddd;
+
+        text-align: center;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+
+      .summary {
+        margin-top: 40px;
+        padding: 30px;
+
+        border-radius: 16px;
+
+        background: #222;
+        color: white;
+      }
+
+      .summary h2 {
+        margin-top: 0;
+      }
+
+      .summary table {
+        color: #222;
+      }
+
+      .summary-box {
+        margin-top: 25px;
+        padding: 25px;
+
+        border-radius: 10px;
+
+        background: white;
+        color: #222;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 20px 12px;
+        }
+
+        header,
+        .answer-card,
+        .summary {
+          padding: 22px;
+        }
+
+        h1 {
+          font-size: 25px;
+        }
+
+        th,
+        td {
+          padding: 8px;
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- =====================================
+       HEADER
+  ====================================== -->
+
+      <header>
+        <div class="badge">Python Day 4</div>
+
+        <h1>정답 및 해설</h1>
+
+        <p>Python Day 4 Mini Test</p>
+
+        <p>List · Tuple · Dictionary · Set</p>
+      </header>
+
+      <!-- =====================================
+       QUESTION 01
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 01 · 객관식</div>
+
+        <h2>자료구조의 특징</h2>
+
+        <div class="correct-answer">정답 : ④</div>
+
+        <p>
+          Set은 데이터의 입력 순서를 기준으로 인덱스를 이용하여 요소에 접근하는
+          자료구조가 아닙니다.
+        </p>
+
+        <div class="explanation">
+          <h3>해설</h3>
+
+          <p>
+            List와 Tuple은 순서가 있는 Sequence 계열 자료구조이므로 인덱스를
+            이용하여 요소에 접근할 수 있습니다.
+          </p>
+
+          <pre><code>data = ["A", "B", "C"]
+
+print(data[0])
+
+# A</code></pre>
+
+          <p>반면 Set에서는 다음과 같은 인덱스 접근을 사용할 수 없습니다.</p>
+
+          <pre><code>data = {"A", "B", "C"}
+
+print(data[0])
+
+# TypeError 발생</code></pre>
+
+          <div class="important">
+            <strong>Set의 핵심</strong><br /><br />
+
+            중복된 요소를 허용하지 않으며, List처럼 위치 번호를 이용해 요소를
+            꺼내는 자료구조가 아닙니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 02
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 02 · 객관식</div>
+
+        <h2>List</h2>
+
+        <div class="correct-answer">정답 : ② [10, 100, 30, 40]</div>
+
+        <pre><code>data = [10, 20, 30, 40]
+
+data[1] = 100
+
+print(data)</code></pre>
+
+        <div class="explanation">
+          <h3>해설</h3>
+
+          <p>
+            Python의 인덱스는
+            <strong>0부터 시작</strong>합니다.
+          </p>
+
+          <pre><code>data = [10, 20, 30, 40]
+
+         ↑   ↑   ↑   ↑
+index    0   1   2   3</code></pre>
+
+          <p>따라서:</p>
+
+          <pre><code>data[1] = 100</code></pre>
+
+          <p>
+            은 두 번째 값인 <code>20</code>을 <code>100</code>으로 변경합니다.
+          </p>
+
+          <div class="important">
+            List는 <strong>Mutable</strong>, 즉 생성된 이후에도 요소를 변경할 수
+            있는 자료구조입니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 03
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 03 · 객관식</div>
+
+        <h2>Tuple</h2>
+
+        <div class="correct-answer">정답 : ② data = (10,)</div>
+
+        <div class="explanation">
+          <h3>해설</h3>
+
+          <p>
+            요소가 하나뿐인 Tuple을 만들 때는 값 뒤에 반드시 쉼표
+            <code>,</code>가 필요합니다.
+          </p>
+
+          <pre><code>data = (10,)
+
+print(type(data))
+
+# &lt;class 'tuple'&gt;</code></pre>
+
+          <p>반면 다음 코드는 Tuple이 아닙니다.</p>
+
+          <pre><code>data = (10)
+
+print(type(data))
+
+# &lt;class 'int'&gt;</code></pre>
+
+          <div class="important">
+            Tuple을 결정하는 핵심은 단순히 괄호 <code>()</code>가 아니라
+            <strong>쉼표(comma)</strong>입니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 04
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 04 · 객관식</div>
+
+        <h2>Dictionary</h2>
+
+        <div class="correct-answer">정답 : ④ Python</div>
+
+        <pre><code>student = {
+    "name": "David",
+    "age": 25,
+    "course": "Python"
+}
+
+print(student["course"])</code></pre>
+
+        <div class="explanation">
+          <h3>해설</h3>
+
+          <p>
+            Dictionary는
+            <strong>Key : Value</strong> 형태로 데이터를 저장합니다.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>name</td>
+                <td>David</td>
+              </tr>
+
+              <tr>
+                <td>age</td>
+                <td>25</td>
+              </tr>
+
+              <tr>
+                <td>course</td>
+                <td>Python</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>따라서:</p>
+
+          <pre><code>student["course"]</code></pre>
+
+          <p>
+            는 <code>"course"</code>라는 Key에 연결된 Value인
+            <strong>Python</strong>을 반환합니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 05
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 05 · 객관식</div>
+
+        <h2>Set</h2>
+
+        <div class="correct-answer">
+          정답 : ② 중복된 값이 제거되어 1, 2, 3만 요소로 남는다.
+        </div>
+
+        <pre><code>numbers = {1, 2, 2, 3, 3, 3}
+
+print(numbers)</code></pre>
+
+        <div class="explanation">
+          <h3>해설</h3>
+
+          <p>Set은 동일한 값을 여러 번 저장하지 않습니다.</p>
+
+          <pre><code>{1, 2, 2, 3, 3, 3}
+
+        ↓
+
+중복 제거
+
+        ↓
+
+{1, 2, 3}</code></pre>
+
+          <div class="important">
+            Set의 출력 순서를 전제로 프로그램을 작성하면 안 됩니다. 이
+            문제에서는 <strong>어떤 요소가 남는지</strong>가 핵심입니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 06
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 06 · 주관식</div>
+
+        <h2>List 작성하기</h2>
+
+        <div class="correct-answer">모범답안</div>
+
+        <pre><code>fruits = ["apple", "banana", "orange"]
+
+fruits.append("grape")
+
+fruits.insert(1, "mango")
+
+fruits.remove("banana")
+
+print(fruits)</code></pre>
+
+        <p>최종 결과:</p>
+
+        <pre><code>['apple', 'mango', 'orange', 'grape']</code></pre>
+
+        <div class="explanation">
+          <h3>실행 과정</h3>
+
+          <pre><code>["apple", "banana", "orange"]
+
+        ↓ append("grape")
+
+["apple", "banana", "orange", "grape"]
+
+        ↓ insert(1, "mango")
+
+["apple", "mango", "banana", "orange", "grape"]
+
+        ↓ remove("banana")
+
+["apple", "mango", "orange", "grape"]</code></pre>
+
+          <table>
+            <thead>
+              <tr>
+                <th>메서드</th>
+                <th>기능</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>append()</td>
+                <td>마지막에 요소 추가</td>
+              </tr>
+
+              <tr>
+                <td>insert()</td>
+                <td>원하는 위치에 요소 삽입</td>
+              </tr>
+
+              <tr>
+                <td>remove()</td>
+                <td>지정한 값을 찾아 삭제</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 07
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 07 · 주관식</div>
+
+        <h2>Tuple 이해하기</h2>
+
+        <div class="correct-answer">모범답안</div>
+
+        <p>① "green" 출력:</p>
+
+        <pre><code>colors = ("red", "green", "blue")
+
+print(colors[1])</code></pre>
+
+        <p>결과:</p>
+
+        <pre><code>green</code></pre>
+
+        <p>② 다음 코드는 오류가 발생합니다.</p>
+
+        <pre><code>colors[1] = "yellow"</code></pre>
+
+        <div class="explanation">
+          <h3>왜 오류가 발생할까?</h3>
+
+          <p>
+            Tuple은
+            <strong>Immutable</strong> 자료구조이기 때문입니다.
+          </p>
+
+          <p>
+            Immutable은
+            <strong>생성된 이후 내부 요소를 직접 변경할 수 없다</strong>는
+            의미입니다.
+          </p>
+
+          <pre><code>List
+[10, 20, 30]
+      ↓
+요소 변경 가능
+
+
+Tuple
+(10, 20, 30)
+      ↓
+요소 직접 변경 불가능</code></pre>
+
+          <p>
+            실제 Python에서는
+            <code>TypeError</code>가 발생합니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 08
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 08 · 주관식</div>
+
+        <h2>Dictionary 활용하기</h2>
+
+        <div class="correct-answer">모범답안</div>
+
+        <pre><code>student = {
+    "name": "민수",
+    "age": 24,
+    "course": "Python"
+}
+
+student["score"] = 90
+
+print(student["name"])
+print(student["score"])</code></pre>
+
+        <p>실행 결과:</p>
+
+        <pre><code>민수
+90</code></pre>
+
+        <div class="explanation">
+          <h3>Dictionary에 값 추가</h3>
+
+          <pre><code>student["score"] = 90</code></pre>
+
+          <p>
+            기존 Dictionary에
+            <code>"score"</code>라는 새로운 Key가 없으므로 새로운 Key와 Value가
+            추가됩니다.
+          </p>
+
+          <pre><code>{
+    "name": "민수",
+    "age": 24,
+    "course": "Python",
+    "score": 90
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- =====================================
+       QUESTION 09
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 09 · 주관식</div>
+
+        <h2>Set 활용하기</h2>
+
+        <div class="correct-answer">모범답안</div>
+
+        <pre><code>campaign_a = {101, 102, 103, 104}
+
+campaign_b = {103, 104, 105, 106}</code></pre>
+
+        <h3>① 두 광고 중 하나 이상을 클릭</h3>
+
+        <pre><code>campaign_a | campaign_b</code></pre>
+
+        <p>
+          <strong>합집합 — Union</strong>
+        </p>
+
+        <pre><code>{101, 102, 103, 104, 105, 106}</code></pre>
+
+        <h3>② 두 광고를 모두 클릭</h3>
+
+        <pre><code>campaign_a &amp; campaign_b</code></pre>
+
+        <p>
+          <strong>교집합 — Intersection</strong>
+        </p>
+
+        <pre><code>{103, 104}</code></pre>
+
+        <h3>③ Campaign A만 클릭</h3>
+
+        <pre><code>campaign_a - campaign_b</code></pre>
+
+        <p>
+          <strong>차집합 — Difference</strong>
+        </p>
+
+        <pre><code>{101, 102}</code></pre>
+
+        <table>
+          <thead>
+            <tr>
+              <th>연산</th>
+              <th>이름</th>
+              <th>의미</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>A | B</td>
+              <td>Union</td>
+              <td>A 또는 B</td>
+            </tr>
+
+            <tr>
+              <td>A &amp; B</td>
+              <td>Intersection</td>
+              <td>A와 B 모두</td>
+            </tr>
+
+            <tr>
+              <td>A - B</td>
+              <td>Difference</td>
+              <td>A에는 있지만 B에는 없음</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- =====================================
+       QUESTION 10
+  ====================================== -->
+
+      <section class="answer-card">
+        <div class="question-number">QUESTION 10 · 종합 주관식</div>
+
+        <h2>상황에 맞는 자료구조 선택</h2>
+
+        <div class="correct-answer">A → List</div>
+
+        <p>
+          장바구니 상품은 순서가 중요하고, 상품의 추가 및 삭제가 필요하므로
+          List가 적절합니다.
+        </p>
+
+        <pre><code>cart = [
+    "아메리카노",
+    "카페라떼",
+    "바닐라라떼"
+]</code></pre>
+
+        <div class="correct-answer">B → Dictionary</div>
+
+        <p>
+          상품명, 가격, 카테고리처럼 각 데이터가 무엇을 의미하는지 구분하여
+          저장해야 하므로 Dictionary가 적절합니다.
+        </p>
+
+        <pre><code>product = {
+    "name": "아메리카노",
+    "price": 3000,
+    "category": "Coffee"
+}</code></pre>
+
+        <div class="correct-answer">C → Set</div>
+
+        <p>
+          고객 ID에서 중복된 값을 제거하여 고유한 고객만 관리해야 하므로 Set이
+          적절합니다.
+        </p>
+
+        <pre><code>customers = {
+    101,
+    102,
+    102,
+    103,
+    103,
+    104
+}
+
+print(customers)</code></pre>
+
+        <p>남는 요소:</p>
+
+        <pre><code>{101, 102, 103, 104}</code></pre>
+
+        <div class="correct-answer">D → Tuple</div>
+
+        <p>
+          RGB는 Red, Green, Blue라는 값의 순서가 의미를 가지면서, 고정된 하나의
+          데이터 묶음으로 사용할 수 있으므로 Tuple이 적절합니다.
+        </p>
+
+        <pre><code>rgb = (255, 128, 0)</code></pre>
+      </section>
+
+      <!-- =====================================
+       SUMMARY
+  ====================================== -->
+
+      <section class="summary">
+        <h2>객관식 정답 한눈에 보기</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>문제</th>
+              <th>정답</th>
+              <th>핵심 개념</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1번</td>
+              <td>④</td>
+              <td>Set과 인덱싱</td>
+            </tr>
+
+            <tr>
+              <td>2번</td>
+              <td>②</td>
+              <td>List의 요소 변경</td>
+            </tr>
+
+            <tr>
+              <td>3번</td>
+              <td>②</td>
+              <td>1개 요소 Tuple</td>
+            </tr>
+
+            <tr>
+              <td>4번</td>
+              <td>④</td>
+              <td>Dictionary Key 접근</td>
+            </tr>
+
+            <tr>
+              <td>5번</td>
+              <td>②</td>
+              <td>Set의 중복 제거</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 style="margin-top: 40px">자료구조 핵심 비교</h2>
+
+        <div class="summary-box">
+          <table>
+            <thead>
+              <tr>
+                <th>자료구조</th>
+                <th>표현</th>
+                <th>순서</th>
+                <th>중복</th>
+                <th>변경</th>
+                <th>대표 활용</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>List</strong></td>
+                <td>[ ]</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>장바구니</td>
+              </tr>
+
+              <tr>
+                <td><strong>Tuple</strong></td>
+                <td>( )</td>
+                <td>O</td>
+                <td>O</td>
+                <td>X</td>
+                <td>고정 데이터</td>
+              </tr>
+
+              <tr>
+                <td><strong>Dictionary</strong></td>
+                <td>{Key: Value}</td>
+                <td>삽입 순서 유지</td>
+                <td>Key 중복 X</td>
+                <td>O</td>
+                <td>상품 정보</td>
+              </tr>
+
+              <tr>
+                <td><strong>Set</strong></td>
+                <td>{ }</td>
+                <td>인덱싱 X</td>
+                <td>X</td>
+                <td>O</td>
+                <td>고유 고객</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="margin-top: 40px">이번 수업의 핵심</h2>
+
+        <div class="summary-box">
+          <p>
+            <strong>List</strong><br />
+            순서가 중요하고 데이터를 추가·삭제·수정해야 할 때
+          </p>
+
+          <hr />
+
+          <p>
+            <strong>Tuple</strong><br />
+            순서가 중요하면서 데이터를 변경하지 않을 때
+          </p>
+
+          <hr />
+
+          <p>
+            <strong>Dictionary</strong><br />
+            데이터의 의미를 Key : Value 관계로 표현해야 할 때
+          </p>
+
+          <hr />
+
+          <p>
+            <strong>Set</strong><br />
+            중복을 제거하거나 집합 간의 관계를 계산해야 할 때
+          </p>
+        </div>
+
+        <p style="margin-top: 30px">
+          주관식 문제는 모범답안과 코드가 완전히 동일할 필요는 없습니다.
+        </p>
+
+        <p>
+          문제에서 요구한 결과가 정상적으로 나오고, 해당 자료구조의 특징을
+          올바르게 이해하여 작성했다면 정답으로 볼 수 있습니다.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
